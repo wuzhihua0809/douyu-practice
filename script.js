@@ -277,87 +277,533 @@ $(document).ready(function() {
             $('.typecontent8').css('display','none');
             $('.typecontent1').css('height','228px'); }, 50);
     });
-    var white = function() {
-        $('.onlinetype1').css('background','#fff');
-        $('.onlinetype1').css('color','#000');
-        $('.onlinetype1').css('border','1px solid #d7d7d7');
-        $('.onlinetype2').css('background','#fff');
-        $('.onlinetype2').css('color','#000');
-        $('.onlinetype2').css('border','1px solid #d7d7d7');
-        $('.onlinetype3').css('background','#fff');
-        $('.onlinetype3').css('color','#000');
-        $('.onlinetype3').css('border','1px solid #d7d7d7');
-        $('.onlinetype4').css('background','#fff');
-        $('.onlinetype4').css('color','#000');
-        $('.onlinetype4').css('border','1px solid #d7d7d7');
-        $('.onlinetype5').css('background','#fff');
-        $('.onlinetype5').css('color','#000');
-        $('.onlinetype5').css('border','1px solid #d7d7d7');
-        $('.onlinetype6').css('background','#fff');
-        $('.onlinetype6').css('color','#000');
-        $('.onlinetype6').css('border','1px solid #d7d7d7');
-        $('.onlinetype7').css('background','#fff');
-        $('.onlinetype7').css('color','#000');
-        $('.onlinetype7').css('border','1px solid #d7d7d7');
-        $('.onlinetype8').css('background','#fff');
-        $('.onlinetype8').css('color','#000');
-        $('.onlinetype8').css('border','1px solid #d7d7d7');
-        $('.onlinetype9').css('background','#fff');
-        $('.onlinetype9').css('color','#000');
-        $('.onlinetype9').css('border','1px solid #d7d7d7');
+    var cleantype = function() {
+        $('.onlinetype1, .onlinetype2, .onlinetype3, .onlinetype4, .onlinetype5, .onlinetype6, .onlinetype7, .onlinetype8, .onlinetype9').css('background','#fff');
+        $('.onlinetype1, .onlinetype2, .onlinetype3, .onlinetype4, .onlinetype5, .onlinetype6, .onlinetype7, .onlinetype8, .onlinetype9').css('color','#000');
+        $('.onlinetype1, .onlinetype2, .onlinetype3, .onlinetype4, .onlinetype5, .onlinetype6, .onlinetype7, .onlinetype8, .onlinetype9').css('border','1px solid #d7d7d7');
     };
     $('.onlinetype1').on('click',function() {
-        white();
+        cleantype();
         $('.onlinetype1').css('background','#f60');
         $('.onlinetype1').css('color','#fff');
         $('.onlinetype1').css('border','1px solid #f60');
     });
     $('.onlinetype2').on('click',function() {
-        white();
+        cleantype();
         $('.onlinetype2').css('background','#f60');
         $('.onlinetype2').css('color','#fff');
         $('.onlinetype2').css('border','1px solid #f60');
     });
     $('.onlinetype3').on('click',function() {
-        white();
+        cleantype();
         $('.onlinetype3').css('background','#f60');
         $('.onlinetype3').css('color','#fff');
         $('.onlinetype3').css('border','1px solid #f60');
     });
     $('.onlinetype4').on('click',function() {
-        white();
+        cleantype();
         $('.onlinetype4').css('background','#f60');
         $('.onlinetype4').css('color','#fff');
         $('.onlinetype4').css('border','1px solid #f60');
     });
     $('.onlinetype5').on('click',function() {
-        white();
+        cleantype();
         $('.onlinetype5').css('background','#f60');
         $('.onlinetype5').css('color','#fff');
         $('.onlinetype5').css('border','1px solid #f60');
     });
     $('.onlinetype6').on('click',function() {
-        white();
+        cleantype();
         $('.onlinetype6').css('background','#f60');
         $('.onlinetype6').css('color','#fff');
         $('.onlinetype6').css('border','1px solid #f60');
     });
     $('.onlinetype7').on('click',function() {
-        white();
+        cleantype();
         $('.onlinetype7').css('background','#f60');
         $('.onlinetype7').css('color','#fff');
         $('.onlinetype7').css('border','1px solid #f60');
     });
     $('.onlinetype8').on('click',function() {
-        white();
+        cleantype();
         $('.onlinetype8').css('background','#f60');
         $('.onlinetype8').css('color','#fff');
         $('.onlinetype8').css('border','1px solid #f60');
     });
     $('.onlinetype9').on('click',function() {
-        white();
+        cleantype();
         $('.onlinetype9').css('background','#f60');
         $('.onlinetype9').css('color','#fff');
         $('.onlinetype9').css('border','1px solid #f60');
+    });
+    $('.gettouch').on('mouseenter',function() {
+        $(this).find('.playicon').animate({
+        top:'40%',
+        opacity:'1'});
+    });
+    $('.gettouch').on('mouseleave',function() {
+        $(this).find('.playicon').animate({
+            top:'80%',
+            opacity:'0'});
+        $('.playicon').css('top','80%')
+    });
+    var cleanpage = function() {
+        $('#page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8, #page9').css('color','#7f7f7f');
+        $('#page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8, #page9').css('background','#f2f2f2');
+        $('#page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8, #page9').css('border','1px solid #d5d5d5');
+        $('#page2').text(2);
+        $('#page3').text(3);
+        $('#page4').text(4);
+        $('#page5').text(5);
+        $('#page6').text(6);
+        $('#page7').text(7);
+        $('#page8').text(8);
+    };
+    $('#page1').on('click',function() {
+        cleanpage();
+        $('#page1').css('color','#fff');
+        $('#page1').css('background','#f70');
+        $('#page1').css('border','1px solid #f70');
+        $('#dot1').css('display','none');
+        $('#dot2').css('display','inline-block');
+    });
+    $('#page2').on('click',function() {
+        var num = parseInt($(this).text()); 
+        if (num >5 && num < 31) {
+            cleanpage();
+            $('#page2').text(num -3);
+            $('#page3').text(num -2);
+            $('#page4').text(num -1);
+            $('#page5').text(num);
+            $('#page6').text(num +1);
+            $('#page7').text(num +2);
+            $('#page8').text(num +3);
+            $('#page5').css('color','#fff');
+            $('#page5').css('background','#f70');
+            $('#page5').css('border','1px solid #f70');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','inline-block');
+        } else if(num <= 5) {
+            cleanpage();
+            var page = '#page' +num;
+            $(page).css('color','#fff');
+            $(page).css('background','#f70');
+            $(page).css('border','1px solid #f70');
+            $('#dot1').css('display','none');
+            $('#dot2').css('display','inline-block');
+        };
+    });
+    $('#page3').on('click',function() {
+        var num = parseInt($(this).text()); 
+        if (num >5 && num < 31) {
+            cleanpage();
+            $('#page2').text(num -3);
+            $('#page3').text(num -2);
+            $('#page4').text(num -1);
+            $('#page5').text(num);
+            $('#page6').text(num +1);
+            $('#page7').text(num +2);
+            $('#page8').text(num +3);
+            $('#page5').css('color','#fff');
+            $('#page5').css('background','#f70');
+            $('#page5').css('border','1px solid #f70');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','inline-block');
+        } else if(num <= 5) {
+            cleanpage();
+            var page = '#page' +num;
+            $(page).css('color','#fff');
+            $(page).css('background','#f70');
+            $(page).css('border','1px solid #f70');
+            $('#dot1').css('display','none');
+            $('#dot2').css('display','inline-block');
+        };
+    });
+    $('#page4').on('click',function() {
+        var num = parseInt($(this).text()); 
+        if (num >5 && num < 31) {
+            cleanpage();
+            $('#page2').text(num -3);
+            $('#page3').text(num -2);
+            $('#page4').text(num -1);
+            $('#page5').text(num);
+            $('#page6').text(num +1);
+            $('#page7').text(num +2);
+            $('#page8').text(num +3);
+            $('#page5').css('color','#fff');
+            $('#page5').css('background','#f70');
+            $('#page5').css('border','1px solid #f70');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','inline-block');
+        } else if(num <= 5) {
+            cleanpage();
+            var page = '#page' +num;
+            $(page).css('color','#fff');
+            $(page).css('background','#f70');
+            $(page).css('border','1px solid #f70');
+            $('#dot1').css('display','none');
+            $('#dot2').css('display','inline-block');
+        };
+    });
+    $('#page5').on('click',function() {
+        var num = parseInt($(this).text()); 
+        if (num >5 && num < 31) {
+            cleanpage();
+            $('#page2').text(num -3);
+            $('#page3').text(num -2);
+            $('#page4').text(num -1);
+            $('#page5').text(num);
+            $('#page6').text(num +1);
+            $('#page7').text(num +2);
+            $('#page8').text(num +3);
+            $('#page5').css('color','#fff');
+            $('#page5').css('background','#f70');
+            $('#page5').css('border','1px solid #f70');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','inline-block');
+        } else if(num <= 5) {
+            cleanpage();
+            var page = '#page' +num;
+            $(page).css('color','#fff');
+            $(page).css('background','#f70');
+            $(page).css('border','1px solid #f70');
+            $('#dot1').css('display','none');
+            $('#dot2').css('display','inline-block');
+        } else if(num >=31) {
+            cleanpage();
+            $('#page2').text(28);
+            $('#page3').text(29);
+            $('#page4').text(30);
+            $('#page5').text(31);
+            $('#page6').text(32);
+            $('#page7').text(33);
+            $('#page8').text(34);
+            $('#page5').css('color','#fff');
+            $('#page5').css('background','#f70');
+            $('#page5').css('border','1px solid #f70');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','none');
+        };
+    });
+    $('#page6').on('click',function() {
+        var num = parseInt($(this).text()); 
+        if (num >5 && num < 31) {
+            cleanpage();
+            $('#page2').text(num -3);
+            $('#page3').text(num -2);
+            $('#page4').text(num -1);
+            $('#page5').text(num);
+            $('#page6').text(num +1);
+            $('#page7').text(num +2);
+            $('#page8').text(num +3);
+            $('#page5').css('color','#fff');
+            $('#page5').css('background','#f70');
+            $('#page5').css('border','1px solid #f70');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','inline-block');
+        } else if(num >=31) {
+            cleanpage();
+            $('#page2').text(28);
+            $('#page3').text(29);
+            $('#page4').text(30);
+            $('#page5').text(31);
+            $('#page6').text(32);
+            $('#page7').text(33);
+            $('#page8').text(34);
+            $('#page6').css('color','#fff');
+            $('#page6').css('background','#f70');
+            $('#page6').css('border','1px solid #f70');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','none');
+        };
+    });
+    $('#page7').on('click',function() {
+        var num = parseInt($(this).text()); 
+        if (num >5 && num < 31) {
+            cleanpage();
+            $('#page2').text(num -3);
+            $('#page3').text(num -2);
+            $('#page4').text(num -1);
+            $('#page5').text(num);
+            $('#page6').text(num +1);
+            $('#page7').text(num +2);
+            $('#page8').text(num +3);
+            $('#page5').css('color','#fff');
+            $('#page5').css('background','#f70');
+            $('#page5').css('border','1px solid #f70');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','inline-block');
+        } else if(num >=31) {
+            cleanpage();
+            $('#page2').text(28);
+            $('#page3').text(29);
+            $('#page4').text(30);
+            $('#page5').text(31);
+            $('#page6').text(32);
+            $('#page7').text(33);
+            $('#page8').text(34);
+            $('#page7').css('color','#fff');
+            $('#page7').css('background','#f70');
+            $('#page7').css('border','1px solid #f70');
+            $('#dot1').css('display','none');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','none');
+        };
+    });
+    $('#page8').on('click',function() {
+        var num = parseInt($(this).text()); 
+        if (num >5 && num < 31) {
+            cleanpage();
+            $('#page2').text(num -3);
+            $('#page3').text(num -2);
+            $('#page4').text(num -1);
+            $('#page5').text(num);
+            $('#page6').text(num +1);
+            $('#page7').text(num +2);
+            $('#page8').text(num +3);
+            $('#page5').css('color','#fff');
+            $('#page5').css('background','#f70');
+            $('#page5').css('border','1px solid #f70');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','inline-block');
+        } else if(num >=31) {
+            cleanpage();
+            $('#page2').text(28);
+            $('#page3').text(29);
+            $('#page4').text(30);
+            $('#page5').text(31);
+            $('#page6').text(32);
+            $('#page7').text(33);
+            $('#page8').text(34);
+            $('#page8').css('color','#fff');
+            $('#page8').css('background','#f70');
+            $('#page8').css('border','1px solid #f70');
+            $('#dot1').css('display','none');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','none');
+        };
+    });
+    $('#page9').on('click',function() {
+        cleanpage();
+        $('#page9').css('color','#fff');
+        $('#page9').css('background','#f70');
+        $('#page9').css('border','1px solid #f70');
+        $('#page2').text(28);
+        $('#page3').text(29);
+        $('#page4').text(30);
+        $('#page5').text(31);
+        $('#page6').text(32);
+        $('#page7').text(33);
+        $('#page8').text(34);
+        $('#dot1').css('display','inline-block');
+        $('#dot2').css('display','none');
+    });
+    $('.lastpage').on('click',function() {
+        var num;
+        $('.page').each(function(){
+            if ($(this).css('color') == 'rgb(255, 255, 255)') {
+                num = parseInt($(this).text()); 
+            };
+        });
+        if (num > 1) {
+            num--;
+            if (num >5 && num < 31) {
+                cleanpage();
+                $('#page2').text(num -3);
+                $('#page3').text(num -2);
+                $('#page4').text(num -1);
+                $('#page5').text(num);
+                $('#page6').text(num +1);
+                $('#page7').text(num +2);
+                $('#page8').text(num +3);
+                $('#page5').css('color','#fff');
+                $('#page5').css('background','#f70');
+                $('#page5').css('border','1px solid #f70');
+                $('#dot1').css('display','inline-block');
+                $('#dot2').css('display','inline-block');
+            } else if(num <= 5) {
+                cleanpage();
+                var page = '#page' +num;
+                $(page).css('color','#fff');
+                $(page).css('background','#f70');
+                $(page).css('border','1px solid #f70');
+                $('#dot1').css('display','none');
+                $('#dot2').css('display','inline-block');
+            } else if(num >=31) {
+                cleanpage();
+                $('#page2').text(28);
+                $('#page3').text(29);
+                $('#page4').text(30);
+                $('#page5').text(31);
+                $('#page6').text(32);
+                $('#page7').text(33);
+                $('#page8').text(34);
+                num = 9 - 35 + num;
+                var page = '#page' +num;
+                $(page).css('color','#fff');
+                $(page).css('background','#f70');
+                $(page).css('border','1px solid #f70');
+                $('#dot1').css('display','inline-block');
+                $('#dot2').css('display','none');
+            };
+        };
+    });
+    $('.nextpage').on('click',function() {
+        var num;
+        $('.page').each(function(){
+            if ($(this).css('color') == 'rgb(255, 255, 255)') {
+                num = parseInt($(this).text()); 
+            };
+        });
+        if (num <35) {
+            num++;
+            if (num >5 && num < 31) {
+                cleanpage();
+                $('#page2').text(num -3);
+                $('#page3').text(num -2);
+                $('#page4').text(num -1);
+                $('#page5').text(num);
+                $('#page6').text(num +1);
+                $('#page7').text(num +2);
+                $('#page8').text(num +3);
+                $('#page5').css('color','#fff');
+                $('#page5').css('background','#f70');
+                $('#page5').css('border','1px solid #f70');
+                $('#dot1').css('display','inline-block');
+                $('#dot2').css('display','inline-block');
+            } else if(num <= 5) {
+                cleanpage();
+                var page = '#page' +num;
+                $(page).css('color','#fff');
+                $(page).css('background','#f70');
+                $(page).css('border','1px solid #f70');
+                $('#dot1').css('display','none');
+                $('#dot2').css('display','inline-block');
+            } else if(num >=31) {
+                cleanpage();
+                $('#page2').text(28);
+                $('#page3').text(29);
+                $('#page4').text(30);
+                $('#page5').text(31);
+                $('#page6').text(32);
+                $('#page7').text(33);
+                $('#page8').text(34);
+                num = 9 - 35 + num;
+                var page = '#page' +num;
+                $(page).css('color','#fff');
+                $(page).css('background','#f70');
+                $(page).css('border','1px solid #f70');
+                $('#dot1').css('display','inline-block');
+                $('#dot2').css('display','none');
+            };
+        };
+    });
+    $('.jumpto').on('click',function() {
+        var value = $('.jumppage').val();
+        if (isNaN(value)) {
+            $('.warning').css('display','block');
+            setTimeout(function(){
+                    $(".warning").css('display','none') }, 3000);
+        } 
+        var num = parseInt(value);
+        if (num >5 && num < 31) {
+            cleanpage();
+            $('#page2').text(num -3);
+            $('#page3').text(num -2);
+            $('#page4').text(num -1);
+            $('#page5').text(num);
+            $('#page6').text(num +1);
+            $('#page7').text(num +2);
+            $('#page8').text(num +3);
+            $('#page5').css('color','#fff');
+            $('#page5').css('background','#f70');
+            $('#page5').css('border','1px solid #f70');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','inline-block');
+        } else if(num <= 5 && num >= 1) {
+            cleanpage();
+            var page = '#page' +num;
+            $(page).css('color','#fff');
+            $(page).css('background','#f70');
+            $(page).css('border','1px solid #f70');
+            $('#dot1').css('display','none');
+            $('#dot2').css('display','inline-block');
+        } else if(num >=31 && num <= 35) {
+            cleanpage();
+            $('#page2').text(28);
+            $('#page3').text(29);
+            $('#page4').text(30);
+            $('#page5').text(31);
+            $('#page6').text(32);
+            $('#page7').text(33);
+            $('#page8').text(34);
+            num = 9 - 35 + num;
+            var page = '#page' +num;
+            $(page).css('color','#fff');
+            $(page).css('background','#f70');
+            $(page).css('border','1px solid #f70');
+            $('#dot1').css('display','inline-block');
+            $('#dot2').css('display','none');
+        } else {
+            $('.warning').css('display','block');
+            setTimeout(function(){
+                    $(".warning").css('display','none') }, 3000);
+        };
+        $('.jumppage').val(""); 
+    });
+    $('.jumppage').bind('keypress',function(event){
+        if(event.keyCode == "13") {
+            var value = $('.jumppage').val();
+            if (isNaN(value)) {
+                $('.warning').css('display','block');
+                setTimeout(function(){
+                    $(".warning").css('display','none') }, 3000);
+            } 
+            var num = parseInt(value);
+            if (num >5 && num < 31) {
+                cleanpage();
+                $('#page2').text(num -3);
+                $('#page3').text(num -2);
+                $('#page4').text(num -1);
+                $('#page5').text(num);
+                $('#page6').text(num +1);
+                $('#page7').text(num +2);
+                $('#page8').text(num +3);
+                $('#page5').css('color','#fff');
+                $('#page5').css('background','#f70');
+                $('#page5').css('border','1px solid #f70');
+                $('#dot1').css('display','inline-block');
+                $('#dot2').css('display','inline-block');
+            } else if(num <= 5 && num >= 1) {
+                cleanpage();
+                var page = '#page' +num;
+                $(page).css('color','#fff');
+                $(page).css('background','#f70');
+                $(page).css('border','1px solid #f70');
+                $('#dot1').css('display','none');
+                $('#dot2').css('display','inline-block');
+            } else if(num >=31 && num <= 35) {
+                cleanpage();
+                $('#page2').text(28);
+                $('#page3').text(29);
+                $('#page4').text(30);
+                $('#page5').text(31);
+                $('#page6').text(32);
+                $('#page7').text(33);
+                $('#page8').text(34);
+                num = 9 - 35 + num;
+                var page = '#page' +num;
+                $(page).css('color','#fff');
+                $(page).css('background','#f70');
+                $(page).css('border','1px solid #f70');
+                $('#dot1').css('display','inline-block');
+                $('#dot2').css('display','none');
+            } else {
+                $('.warning').css('display','block');
+                setTimeout(function(){
+                    $(".warning").css('display','none') }, 3000);
+            };
+            $('.jumppage').val("");
+        };
     });
 });
