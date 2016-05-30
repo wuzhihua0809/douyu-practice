@@ -320,7 +320,6 @@ $(document).ready(function() {
         $(this).find('.playicon').animate({
             top:'80%',
             opacity:'0'});
-        $('.playicon').css('top','80%')
     });
     var cleanpage = function() {
         $('#page1, #page2, #page3, #page4, #page5, #page6, #page7, #page8, #page9').removeClass('active');
