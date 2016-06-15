@@ -1,122 +1,143 @@
 $(document).ready(function() {
-    $('.search').on('focus',function() {
-    	$('.searchbar').addClass('active');
-    	$('.headnav').addClass('active');
+    const search = $('.search');
+    const fenlei = $('.fenlei');
+    const headnav = $('.headnav');
+    const searchbar = $('.searchbar');
+    const fenleicontent = $('.fenleicontent');
+    const history = $('.history');
+    const historycontent = $('.historycontent');
+    const historyimg = $('.historyimg');
+    const historytxt = $('.historytxt');
+    const focus = $('.focus');
+    const focuscontent = $('.focuscontent');
+    const focusimg = $('.focusimg');
+    const focustxt = $('.focustxt');
+    const download = $('.download');
+    const downloadcontent = $('.downloadcontent');
+    const downloadimg = $('.downloadimg');
+    const downloadtxt = $('.downloadtxt');
+    const account = $('.account');
+    const accountcontent = $('.accountcontent');
+    const accountimg = $('.accountimg');
+    const accounttxt = $('.accounttxt');
+    search.on('focus',function() {
+    	headnav.addClass('active');
+        searchbar.addClass('active');
     });
-    $('.search').on('blur',function() {
-    	$('.searchbar').removeClass('active');
-    	$('.headnav').removeClass('active');
+    search.on('blur',function() {
+    	headnav.removeClass('active');
+        searchbar.removeClass('active');
     });
-    $('.fenlei').on('mouseenter',function() {
+    fenlei.on('mouseenter',function() {
         setTimeout(function(){
-            $('.fenleicontent').addClass('active');
+            fenleicontent.addClass('active');
             $('.triangle1').addClass('active'); }, 50);
     });
-    $('.fenlei').on('mouseleave', function() {
+    fenlei.on('mouseleave', function() {
         var timer = setTimeout(function() {
-            $('.fenleicontent').removeClass('active');
+            fenleicontent.removeClass('active');
             $('.triangle1').removeClass('active'); }, 50);
         $('.fenleicontent').on('mouseenter', function() {
             clearTimeout(timer);
          });
     });
-    $('.fenleicontent').on('mouseleave', function() {
-        $('.fenleicontent').removeClass('active');
+    fenleicontent.on('mouseleave', function() {
+        fenleicontent.removeClass('active');
         $('.triangle1').removeClass('active');
     });
-    $('.history').on('mouseenter',function() {
+    history.on('mouseenter',function() {
         setTimeout(function() {
             $('.triangle5').addClass('active');
-            $('.historycontent').addClass('active');
-            $('.historyimg').addClass('active');
-            $('.historytxt').addClass('active'); }, 50);
+            historycontent.addClass('active');
+            historyimg.addClass('active');
+            historytxt.addClass('active'); }, 50);
     });
-    $('.history').on('mouseleave', function() {
+    history.on('mouseleave', function() {
         var timer = setTimeout(function() {
             $('.triangle5').removeClass('active');
-            $('.historycontent').removeClass('active');
-            $('.historyimg').removeClass('active');
-            $('.historytxt').removeClass('active'); }, 50);
-        $('.historycontent').on('mouseenter', function() {
+            historycontent.removeClass('active');
+            historyimg.removeClass('active');
+            historytxt.removeClass('active'); }, 50);
+        historycontent.on('mouseenter', function() {
             clearTimeout(timer);
          });
     });
-    $('.historycontent').on('mouseleave', function() {
+    historycontent.on('mouseleave', function() {
         $('.triangle5').removeClass('active');
-        $('.historycontent').removeClass('active');
-        $('.historyimg').removeClass('active');
-        $('.historytxt').removeClass('active');
+        historycontent.removeClass('active');
+        historyimg.removeClass('active');
+        historytxt.removeClass('active');
     });
-    $('.focus').mouseenter(function() {
+    focus.mouseenter(function() {
         setTimeout(function() {
             $('.triangle6').addClass('active');
-            $('.focuscontent').addClass('active');
-            $('.focusimg').addClass('active');
-            $('.focustxt').addClass('active'); }, 50);
+            focuscontent.addClass('active');
+            focusimg.addClass('active');
+            focustxt.addClass('active'); }, 50);
     });
-    $('.focus').on('mouseleave', function() {
+    focus.on('mouseleave', function() {
         var timer = setTimeout(function() {
             $('.triangle6').removeClass('active');
-            $('.focuscontent').removeClass('active');
-            $('.focusimg').removeClass('active');
-            $('.focustxt').removeClass('active'); }, 50);
-        $('.focuscontent').on('mouseenter', function() {
+            focuscontent.removeClass('active');
+            focusimg.removeClass('active');
+            focustxt.removeClass('active'); }, 50);
+            focuscontent.on('mouseenter', function() {
             clearTimeout(timer);
          });
     });
-    $('.focuscontent').on('mouseleave', function() {
+    focuscontent.on('mouseleave', function() {
         $('.triangle6').removeClass('active');
-        $('.focuscontent').removeClass('active');
-        $('.focusimg').removeClass('active');
-        $('.focustxt').removeClass('active');
+        focuscontent.removeClass('active');
+        focusimg.removeClass('active');
+        focustxt.removeClass('active');
     });
-    $('.download').on('mouseenter',function() {
+    download.on('mouseenter',function() {
         setTimeout(function() {
             $('.triangle7').addClass('active');
-            $('.downloadcontent').addClass('active');
-            $('.downloadimg').addClass('active');
-            $('.downloadtxt').addClass('active');
+            downloadcontent.addClass('active');
+            downloadimg.addClass('active');
+            downloadtxt.addClass('active');
             $('.triangle2').addClass('active'); }, 50);
     });
-    $('.download').on('mouseleave', function() {
+    download.on('mouseleave', function() {
         var timer = setTimeout(function() {
             $('.triangle7').removeClass('active');
-            $('.downloadcontent').removeClass('active');
-            $('.downloadimg').removeClass('active');
-            $('.downloadtxt').removeClass('active');
+            downloadcontent.removeClass('active');
+            downloadimg.removeClass('active');
+            downloadtxt.removeClass('active');
             $('.triangle2').removeClass('active'); }, 50);
-        $('.downloadcontent').on('mouseenter', function() {
+        downloadcontent.on('mouseenter', function() {
             clearTimeout(timer);
          });
     });
-    $('.downloadcontent').on('mouseleave', function() {
+    downloadcontent.on('mouseleave', function() {
         $('.triangle7').removeClass('active');
-        $('.downloadcontent').removeClass('active');
-        $('.downloadimg').removeClass('active');
-        $('.downloadtxt').removeClass('active');
+        downloadcontent.removeClass('active');
+        downloadimg.removeClass('active');
+        downloadtxt.removeClass('active');
         $('.triangle2').removeClass('active');
     });
-    $('.account').on('mouseenter',function() {
+    account.on('mouseenter',function() {
         setTimeout(function() {
             $('.triangle8').addClass('active');
-            $('.accountcontent').addClass('active');
+            accountcontent.addClass('active');
             $('.triangle3').addClass('active');
-            $('.accounttxt').addClass('active'); }, 50);
+            accounttxt.addClass('active'); }, 50);
     });
-    $('.account').on('mouseleave', function() {
+    account.on('mouseleave', function() {
         var timer = setTimeout(function() {
             $('.triangle8').removeClass('active');
-            $('.accountcontent').removeClass('active');
+            accountcontent.removeClass('active');
             $('.triangle3').removeClass('active');
-            $('.accounttxt').removeClass('active'); }, 50);
-        $('.accountcontent').on('mouseenter', function() {
+            accounttxt.removeClass('active'); }, 50);
+        accountcontent.on('mouseenter', function() {
             clearTimeout(timer);
          });
     });
-    $('.accountcontent').on('mouseleave', function() {
+    accountcontent.on('mouseleave', function() {
         $('.triangle8').removeClass('active');
-        $('.accountcontent').removeClass('active');
-        $('.accounttxt').removeClass('active');
+        accountcontent.removeClass('active');
+        accounttxt.removeClass('active');
         $('.triangle3').removeClass('active');
     });
     $('.leftbtnout').on('click',function() {
